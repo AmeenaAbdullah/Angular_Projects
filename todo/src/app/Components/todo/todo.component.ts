@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../../models/task.model';
 import { Router } from '@angular/router';
-import { TaskCommunicationService } from '../../task-communication.service'; // Import the TaskCommunicationService
+import { TaskCommunicationService } from '../../services/task-communication.service'; // Import the TaskCommunicationService
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',

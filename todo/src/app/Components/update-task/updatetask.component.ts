@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Task } from '../../models/task.model'; // Import the Task model
 import { Router} from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { TaskCommunicationService } from '../../task-communication.service'; // Import the TaskCommunicationService
+import { TaskCommunicationService } from '../../services/task-communication.service'; // Import the TaskCommunicationService
 
 @Component({
   selector: 'app-updatetask',
@@ -11,15 +11,17 @@ import { TaskCommunicationService } from '../../task-communication.service'; // 
   styleUrls: ['./updatetask.component.css']
 })
 export class UpdatetaskComponent {
-  newTask: Task = { id: 0, title: '', description: '', dueDate: new Date(), completed: false };// Initialize a new Task instance
+  
+  newTask: Task = { id: '', title: '', description: '', dueDate: new Date(), completed: false };// Initialize a new Task instance
  
   constructor(private route: ActivatedRoute,private taskCommunicationService: TaskCommunicationService, private router: Router) {} // Inject the service
   
  
   ngOnInit() {
-    console.log("Call")
-    this.newTask=this.taskCommunicationService.getTask(this.newTask);
-   
+    this.route.params.subscribe(params => {
+      const taskId = params['id']; // This is the task ID from the route parameter
+      this.newTask= this.taskCommunicationService.getTask(taskId);
+    });
   
   }
   onSubmit(form: NgForm) {
@@ -29,7 +31,7 @@ export class UpdatetaskComponent {
       this.router.navigate(['/']);
     
       // Clear the form after submission
-      this.newTask ={ id: 0, title: '', description: '', dueDate: new Date(), completed: false };
+      this.newTask ={ id: '', title: '', description: '', dueDate: new Date(), completed: false };
       form.resetForm();
     }
   }

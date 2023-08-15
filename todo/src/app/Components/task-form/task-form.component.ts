@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Task } from '../../models/task.model'; 
 import { Router} from '@angular/router';
-import { TaskCommunicationService } from '../../task-communication.service'; 
+import { TaskCommunicationService } from '../../services/task-communication.service'; 
 @Component({
   selector: 'app-task-form',
   templateUrl: './task-form.component.html',
