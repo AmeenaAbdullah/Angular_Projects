@@ -1,15 +1,24 @@
+<!-- Container for an individual todo item -->
 <div class="todo-item">
   <div class="custom-checkbox">
+    <!-- Checkbox input for marking task as completed -->
     <input type="checkbox" [(ngModel)]="task.completed">
   </div>
+
+  <!-- Container for the title and description of the task -->
+  <div class="todo-title">
+    <!-- Display the task title with conditional completed class -->
+    <span [ngClass]="{'completed': task.completed}">{{ task.title }}</span>   
+    <!-- Display the task description -->
+    <div class="todo-des">{{ task.description }}</div>
+  </div>
   
- <div class="todo-title">
-  <span  [ngClass]="{'completed': task.completed}">{{ task.title }}</span>
-  <div class="todo-des">{{ task.description }}</div>
- </div>
-  <span class="delete-icon">
-    <i class="fas fa-edit" (click)="clickButton('/update-task')"></i> 
-    <i class="fas fa-trash-alt" (click)="remove.emit()" ></i>
-</span>
+  <!-- Container for the features (edit and delete icons) -->
+  <span class="features">
+    <!-- Edit icon with click event to navigate to update task page -->
+    <i class="fas fa-edit" (click)="clickButton('/update-task/' + task.id)"></i> 
+    <!-- Delete icon with click event to trigger the remove function -->
+    <i class="fas fa-trash-alt del_icon" (click)="remove.emit()"></i>
+  </span>
 
 </div>

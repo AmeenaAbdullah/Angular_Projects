@@ -1,3 +1,4 @@
+/* Styles for individual todo items */
 .todo-item {
   display: flex;
   align-items: center;
@@ -5,53 +6,66 @@
   background-color: #2e2e5f;
   border-radius: 14px;
   color: white;
-  height:max-content;
+  height: max-content;
+  padding: 10px;
 }
 
-.todo-item :hover{
-    box-shadow: 5px 5px 2px rgb(24 13 58 / 25%);
-  }
+/* Styles for completed tasks (with line-through) */
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
+
+/* Styles for the title of each todo item */
 .todo-title {
-    flex-grow: 1;
-    margin-left: 10px;
+  flex-grow: 1;
+  margin-left: 10px;
 }
-.delete-icon {
+
+/* Styles for features (e.g., checkboxes) within todo items */
+.features {
   cursor: pointer;
   color: white;
   margin-left: 6px;
   margin-right: 13px;
 }
-.todo-item input{
+
+/* Styles for checkboxes within todo items */
+.todo-item input {
   margin-left: 30px;
-  width: 20px;   
+  width: 20px;
   height: 20px;
-  border-radius: 50%; 
-  border: 2px solid #ccc; 
+  border-radius: 50%;
+  border: 2px solid #ccc;
   appearance: none;
   outline: none;
   cursor: pointer;
 }
+
+/* Custom styles for checkboxes */
 .custom-checkbox input[type="checkbox"] {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  appearance: none; 
-  outline: none; 
+  appearance: none;
+  outline: none;
   cursor: pointer;
-  border: 2px solid #ccc; 
-  transition: border-color 0.3s ease; 
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
 }
 
+/* Custom styles for checked checkboxes */
 .custom-checkbox input[type="checkbox"]:checked {
   padding: 10px;
   border-color: black;
-  background-color: white; 
-}
-.todo-des{
-  font-size:small;
+  background-color: white;
 }
 
-  
+/* Styles for todo item descriptions */
+.todo-des {
+  font-size: small;
+}
+
+/* Styles for the delete icon */
+.del_icon {
+  margin-left: 5px;
+}

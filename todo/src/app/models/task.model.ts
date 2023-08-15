@@ -1,10 +1,10 @@
 export class Task {
-    id: number;
+    id: string;
     title: string;
     description: string;
     dueDate: Date;
     completed: boolean;
-    constructor(id: number, title: string, description: string, dueDate: Date, completed: boolean) {
+    constructor(id: string, title: string, description: string, dueDate: Date, completed: boolean) {
       this.id = id;
       this.title = title;
       this.description = description;

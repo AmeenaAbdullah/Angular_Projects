@@ -1,10 +1,19 @@
+<!-- Container for the entire todo list -->
 <div class="todo-container">
+  <!-- Heading for the todo list -->
   <h1>Todo List</h1>
+  <!-- Button to add a new task -->
   <button (click)="clickButton('/task-form')">Add New Task</button>
+  <!-- list for displaying tasks -->
   <ul>
+    <!-- Loop through each task in the tasks array -->
     <li *ngFor="let task of tasks; let i = index">
-      <app-todoitem [task]="task" (remove)="removeTask(i)" > </app-todoitem>
+      <!-- Use the app-todoitem component to display individual task items -->
+      <app-todoitem [task]="task" (remove)="removeTask(i)"></app-todoitem>
     </li>
   </ul>
+  
+  <!-- Display a message when there are no tasks -->
   <div *ngIf="tasks.length === 0" class="text-center no-task">No tasks!</div>
+  
 </div>

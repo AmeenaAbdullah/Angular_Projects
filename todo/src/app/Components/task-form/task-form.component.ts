@@ -10,7 +10,7 @@ import { TaskCommunicationService } from '../../task-communication.service';
 })
 export class TaskFormComponent {
 
-  newTask: Task = { id: 0, title: '', description: '', dueDate: new Date(), completed: false };
+  newTask: Task = { id: "", title: '', description: '', dueDate: new Date(), completed: false };
   showTitleWarning: boolean = false;
   constructor(private taskCommunicationService: TaskCommunicationService, private router: Router) {} 
   onSubmit(form: NgForm) {
@@ -21,7 +21,7 @@ export class TaskFormComponent {
     if (form.valid) {
     this.router.navigate(['/']);
     this.taskCommunicationService.addTask(this.newTask);
-    this.newTask ={ id: 0, title: '', description: '', dueDate: new Date(), completed: false };
+    this.newTask ={ id: "", title: '', description: '', dueDate: new Date(), completed: false };
     form.resetForm();
     this.showTitleWarning = false;
     }

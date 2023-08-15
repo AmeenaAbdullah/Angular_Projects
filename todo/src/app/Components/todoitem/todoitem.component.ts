@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class TodoitemComponent {
   constructor(private router: Router){
   }
-  @Input() task: Task = { id: 0, title: '', description: '', dueDate: new Date(), completed: false };
+  @Input() task: Task = { id: "", title: '', description: '', dueDate: new Date(), completed: false };
   @Output() remove: EventEmitter<void> = new EventEmitter<void>();
   clickButton(path: string) {
     console.log("move")
