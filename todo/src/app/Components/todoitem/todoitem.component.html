@@ -1,0 +1,15 @@
+<div class="todo-item">
+  <div class="custom-checkbox">
+    <input type="checkbox" [(ngModel)]="task.completed">
+  </div>
+  
+ <div class="todo-title">
+  <span  [ngClass]="{'completed': task.completed}">{{ task.title }}</span>
+  <div class="todo-des">{{ task.description }}</div>
+ </div>
+  <span class="delete-icon">
+    <i class="fas fa-edit" (click)="clickButton('/update-task')"></i> 
+    <i class="fas fa-trash-alt" (click)="remove.emit()" ></i>
+</span>
+
+</div>

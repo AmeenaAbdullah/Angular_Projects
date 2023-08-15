@@ -1,0 +1,13 @@
+<div class="form-container">
+  <h1>Add Task</h1>
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm" novalidate>
+    <label for="title">Title</label>
+    <input type="text" id="title" [(ngModel)]="newTask.title" name="title" required>
+    <div class="validation-message" *ngIf="showTitleWarning">
+      Please enter a title.
+    </div>
+    <label for="description">Description</label>
+    <textarea id="description" [(ngModel)]="newTask.description" name="description"></textarea>
+    <button type="submit" [disabled]="taskForm.invalid">Add Task</button>
+  </form>
+</div>

@@ -1,0 +1,57 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 23px;
+  background-color: #2e2e5f;
+  border-radius: 14px;
+  color: white;
+  height:max-content;
+}
+
+.todo-item :hover{
+    box-shadow: 5px 5px 2px rgb(24 13 58 / 25%);
+  }
+.completed {
+    text-decoration: line-through;
+}
+.todo-title {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+.delete-icon {
+  cursor: pointer;
+  color: white;
+  margin-left: 6px;
+  margin-right: 13px;
+}
+.todo-item input{
+  margin-left: 30px;
+  width: 20px;   
+  height: 20px;
+  border-radius: 50%; 
+  border: 2px solid #ccc; 
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.custom-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  appearance: none; 
+  outline: none; 
+  cursor: pointer;
+  border: 2px solid #ccc; 
+  transition: border-color 0.3s ease; 
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  padding: 10px;
+  border-color: black;
+  background-color: white; 
+}
+.todo-des{
+  font-size:small;
+}
+
+  
