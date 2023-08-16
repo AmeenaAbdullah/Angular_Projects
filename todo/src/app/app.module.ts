@@ -9,15 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { TaskFormComponent } from './Components/task-form/task-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UpdatetaskComponent } from './Components/update-task/updatetask.component';
-import { CommonFormComponent } from './Components/common-form/common-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     TodoitemComponent,
     TaskFormComponent,
-    UpdatetaskComponent,
-    CommonFormComponent
+    UpdatetaskComponent
   ],
   imports: [
     BrowserModule,

@@ -8,8 +8,8 @@ import { TaskCommunicationService } from '../../services/task-communication.serv
 
 @Component({
   selector: 'app-updatetask',
-  templateUrl: './updatetask.component.html',
-  styleUrls: ['./updatetask.component.css']
+  templateUrl: '../common-form.component.html',
+  styleUrls: ['../task-form/task-form.component.css']
 })
 export class UpdatetaskComponent implements OnInit {
   formtitle: string;
@@ -20,7 +20,7 @@ export class UpdatetaskComponent implements OnInit {
   constructor(private _route: ActivatedRoute, private _taskCommunicationService: TaskCommunicationService, private _router: Router) { } // Inject the service
   ngOnInit() {
     this.newTask = this._taskCommunicationService.initializeTask();
-    this.formtitle = titles.addTask;
+    this.formtitle = titles.updateTask;
     this.validatemsg = messages.validatemsg;
     this.showTitleWarning = false;
     this.btntitle = "Update";

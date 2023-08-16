@@ -6,7 +6,7 @@ import { titles, messages } from '../../../assets/utilities/constants';
 import { TaskCommunicationService } from '../../services/task-communication.service';
 @Component({
   selector: 'app-task-form',
-  templateUrl: './task-form.component.html',
+  templateUrl: '../common-form.component.html',
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
