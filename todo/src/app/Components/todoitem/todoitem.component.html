@@ -8,15 +8,15 @@
   <!-- Container for the title and description of the task -->
   <div class="todo-title">
     <!-- Display the task title with conditional completed class -->
-    <span [ngClass]="{'completed': task.completed}">{{ task.title }}</span>   
+    <span [ngClass]="{'completed': task.completed}">{{ task.title }}</span>
     <!-- Display the task description -->
     <div class="todo-des">{{ task.description }}</div>
   </div>
-  
+
   <!-- Container for the features (edit and delete icons) -->
   <span class="features">
     <!-- Edit icon with click event to navigate to update task page -->
-    <i class="fas fa-edit" (click)="clickButton('/update-task/' + task.id)"></i> 
+    <i class="fas fa-edit" (click)="clickButton('/update-task/' + task.id)"></i>
     <!-- Delete icon with click event to trigger the remove function -->
     <i class="fas fa-trash-alt del_icon" (click)="remove.emit()"></i>
   </span>

@@ -6,9 +6,9 @@ import { TodoComponent } from './Components/todo/todo.component';
 import { UpdatetaskComponent } from './Components/update-task/updatetask.component';
 
 const routes: Routes = [
-  { path: '', component: TodoComponent},
-  { path: 'task-form', component: TaskFormComponent},
-  { path: 'update-task/:id', component:UpdatetaskComponent}
+  { path: '', component: TodoComponent },
+  { path: 'task-form', component: TaskFormComponent },
+  { path: 'update-task/:id', component: UpdatetaskComponent }
 ];
 
 @NgModule({

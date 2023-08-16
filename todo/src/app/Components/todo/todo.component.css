@@ -1,73 +1,74 @@
 /* Styles for the container that holds the todo list */
 .todo-container {
-    max-width: 430px;
-    margin: 0 auto;
-    border-radius: 5px;
-    height: 489px;
-    margin-top: 131px;
-    overflow: auto;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  max-width: 430px;
+  margin: 0 auto;
+  border-radius: 5px;
+  height: 489px;
+  margin-top: 131px;
+  overflow: auto;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Styles for todo list buttons */
 .todo-container button {
-    width: 80%;
-    background-color: #e7e7e7;
-    border: none;
-    border-radius: 10px;
-    margin-left: 46px;
-    margin-right: 20px;
-    height: 40px;
-    margin-bottom: 10px;
+  width: 80%;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  margin-left: 46px;
+  margin-right: 20px;
+  height: 40px;
+  margin-bottom: 10px;
+  border: 2px solid var(--primary-color);
 }
 
 /* Styles for todo list buttons on hover */
 .todo-container button:hover {
-    background-color: #2e2e5f;
-    color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /* Styles for the heading of the todo list */
 .todo-container h1 {
-    text-align: center;
-    background-color: #2e2e5f;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Styles for todo list input fields */
 .todo-container input {
-    width: 90%;
-    height: 40px;
-    margin-left: 10px;
+  width: 90%;
+  height: 40px;
+  margin-left: 10px;
 }
 
 /* Custom styling for the add icon */
 .custom-plusicon {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 /* Styles for the unordered list (task list) */
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 /* Styles for checkbox inputs */
 input[type="checkbox"] {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 /* Styles for completed tasks (with line-through) */
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 /* Styles for the "no task" message */
 .no-task {
-    margin-top: 20px;
-    font-size: large;
-    font-weight: bold;
-    color: #2e2e5f;
+  margin-top: 20px;
+  font-size: large;
+  font-weight: bold;
+  color: var(--primary-color);
 }

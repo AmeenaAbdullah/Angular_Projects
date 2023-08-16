@@ -1,0 +1,13 @@
+<div class="form-container">
+  <h1>{{ formTitle }}</h1>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <label for="title">Title</label>
+    <input type="text" id="title" [(ngModel)]="model.title" name="title">
+    <div class="validation-message" *ngIf="showTitleWarning">{{ validatemsg }}</div>
+
+    <!-- Additional form fields from child components -->
+    <ng-content></ng-content>
+
+    <button type="submit">{{ submitButtonLabel }}</button>
+  </form>
+</div>

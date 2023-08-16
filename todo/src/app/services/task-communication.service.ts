@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
   providedIn: 'root'
 })
 export class TaskCommunicationService {
-  private tasks: Task[] = []; 
+  private tasks: Task[] = [];
 
   // Create a BehaviorSubject to observe changes in tasks
   private tasksSubject = new BehaviorSubject<Task[]>(this.tasks);
@@ -14,26 +14,34 @@ export class TaskCommunicationService {
   // Observable to subscribe to changes in tasks
   tasks$ = this.tasksSubject.asObservable();
 
-  constructor() {}
-
+  constructor() { }
+  //initialize the task
+  initializeTask(): Task {
+    return { id: "", title: '', description: '', dueDate: new Date(), completed: false };
+  }
   // Get the array of tasks
   getTasks(): Task[] {
     return this.tasks;
   }
 
   // Get a specific task by ID
-  getTask(id:string): Task {
+  getTask(id: string): Task {
     const index = this.tasks.findIndex(t => t.id === id);
     return this.tasks[index];
   }
 
   // Add a new task to the tasks array
   addTask(task: Task) {
+
     // Generate a random UUID as the task ID
     const taskId = uuidv4();
     // Assign the generated task ID to the task
     task.id = taskId;
+
+    console.log(task);
+    console.log(this.tasks);
     this.tasks.push(task);
+    console.log(this.tasks[0].title);
     this.tasksSubject.next(this.tasks); // Notify subscribers about the change
   }
 

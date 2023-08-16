@@ -1,29 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Task } from '../../models/task.model'; 
-import { Router} from '@angular/router';
-import { TaskCommunicationService } from '../../services/task-communication.service'; 
+import { Task } from '../../models/task.model';
+import { Router } from '@angular/router';
+import { titles, messages } from '../../../assets/utilities/constants';
+import { TaskCommunicationService } from '../../services/task-communication.service';
 @Component({
   selector: 'app-task-form',
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.css']
 })
-export class TaskFormComponent {
-
-  newTask: Task = { id: "", title: '', description: '', dueDate: new Date(), completed: false };
-  showTitleWarning: boolean = false;
-  constructor(private taskCommunicationService: TaskCommunicationService, private router: Router) {} 
+export class TaskFormComponent implements OnInit {
+  formtitle: string;
+  validatemsg: string;
+  newTask: Task;
+  showTitleWarning: boolean;
+  btntitle: string;
+  constructor(private _taskCommunicationService: TaskCommunicationService, private _router: Router) { }
+  ngOnInit(): void {
+    this.newTask = this._taskCommunicationService.initializeTask();
+    this.formtitle = titles.addTask;
+    this.validatemsg = messages.validatemsg;
+    this.showTitleWarning = false;
+    this.btntitle = "Add";
+  }
   onSubmit(form: NgForm) {
     if (!this.newTask.title) {
-      this.showTitleWarning = true; 
+      this.showTitleWarning = true;
       return;
     }
     if (form.valid) {
-    this.router.navigate(['/']);
-    this.taskCommunicationService.addTask(this.newTask);
-    this.newTask ={ id: "", title: '', description: '', dueDate: new Date(), completed: false };
-    form.resetForm();
-    this.showTitleWarning = false;
+      this._router.navigate(['/']);
+      this._taskCommunicationService.addTask(this.newTask);
+      this.newTask = this._taskCommunicationService.initializeTask();
+      form.resetForm();
+      this.showTitleWarning = false;
     }
   }
 }

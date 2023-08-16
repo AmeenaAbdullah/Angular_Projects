@@ -1,58 +1,62 @@
 /* Styles for the container that holds the form */
 .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 /* Styles for the heading within the form container */
 .form-container h1 {
-    font-size: 24px;
-    color: #2e2e5f;
-    font-weight: bolder;
-    margin-bottom: 20px;
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: bolder;
+  margin-bottom: 20px;
 }
 
 /* Styles for the form itself */
 .form-container form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
 
 /* Styles for labels within the form */
 .form-container form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 /* Styles for text inputs and text areas within the form */
 .form-container form input[type="text"],
 .form-container form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 16px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 
 /* Styles for the submit button within the form */
 .form-container form button {
-    background-color: #2e2e5f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /* Styles for the submit button on hover */
 .form-container form button:hover {
-    background-color: #0f87e6;
+  background-color: var(--hover-color);
+}
+
+.validation-message {
+  color: var(--alert-color);
 }

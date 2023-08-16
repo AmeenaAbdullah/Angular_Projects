@@ -1,7 +1,7 @@
 <!-- Container for the entire todo list -->
 <div class="todo-container">
   <!-- Heading for the todo list -->
-  <h1>Todo List</h1>
+  <h1>{{todoapp}}</h1>
   <!-- Button to add a new task -->
   <button (click)="clickButton('/task-form')">Add New Task</button>
   <!-- list for displaying tasks -->
@@ -12,8 +12,8 @@
       <app-todoitem [task]="task" (remove)="removeTask(i)"></app-todoitem>
     </li>
   </ul>
-  
+
   <!-- Display a message when there are no tasks -->
   <div *ngIf="tasks.length === 0" class="text-center no-task">No tasks!</div>
-  
+
 </div>

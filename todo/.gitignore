@@ -1,1 +1,47 @@
+# Node.js dependencies
 node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+
+# Angular generated files
+/dist/
+/*.js
+/*.js.map
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.user
+*.suo
+*.cache
+*.log
+
+# Compiled TypeScript
+*.js
+
+# Compiled SASS or CSS
+*.css
+
+# Angular CLI configuration files
+.angular-cli.json
+.angular-cli.json.*
+
+# Testing files
+/karma-*.js
+
+# User-specific files
+*.sublime-project
+*.sublime-workspace
+
+# macOS files
+.DS_Store
+
+# Environment variables
+.env
+.env.*

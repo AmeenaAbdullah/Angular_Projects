@@ -2,10 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@assets/utilities/constant.css": ["src/assets/utilities/constant.css"]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -25,9 +28,12 @@
     ]
   },
   "angularCompilerOptions": {
+
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+
+
 }

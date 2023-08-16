@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../models/task.model';
 import { Router } from '@angular/router';
+import { TaskCommunicationService } from '../../services/task-communication.service';
 
 @Component({
   selector: 'app-todoitem',
@@ -8,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./todoitem.component.css']
 })
 export class TodoitemComponent {
-  constructor(private router: Router){
+  constructor(private _taskCommunicationService: TaskCommunicationService, private _router: Router) {
   }
-  @Input() task: Task = { id: "", title: '', description: '', dueDate: new Date(), completed: false };
+  @Input() task: Task = this._taskCommunicationService.initializeTask();
   @Output() remove: EventEmitter<void> = new EventEmitter<void>();
   clickButton(path: string) {
     console.log("move")
-    this.router.navigate([path]);
-} 
+    this._router.navigate([path]);
+  }
 }
